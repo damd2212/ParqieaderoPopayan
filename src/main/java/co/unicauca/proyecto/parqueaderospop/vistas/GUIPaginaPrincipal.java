@@ -52,6 +52,9 @@ public class GUIPaginaPrincipal extends javax.swing.JFrame {
         setTitle("Parqueaderos Popayán");
         setBackground(new java.awt.Color(255, 255, 255));
 
+        jDescMenuPrincipal.setBackground(new java.awt.Color(204, 255, 204));
+
+        btnCerrarSesion.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 12)); // NOI18N
         btnCerrarSesion.setText("Cerrar Sesion");
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +78,8 @@ public class GUIPaginaPrincipal extends javax.swing.JFrame {
                 .addGap(0, 425, Short.MAX_VALUE)
                 .addComponent(btnCerrarSesion))
         );
+
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
 
         jMenu1.setText("Opciones");
 

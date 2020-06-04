@@ -10,7 +10,8 @@ public class Main {
     
     public static void main(String[] args){
     //arranca el programa y ejecuta la vista GUIIniciarSesion
-    GUIIniciarSesion ini = new GUIIniciarSesion();    
+    GUIIniciarSesion ini = new GUIIniciarSesion(); 
+    ini.setTitle("Iniciar Sesión");
     ini.setVisible(true);        
     }
     
