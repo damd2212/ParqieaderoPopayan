@@ -38,6 +38,7 @@ public class GUIPaginaPrincipal extends javax.swing.JFrame {
         btnRegVehiParque = new javax.swing.JButton();
         btnRegParqueadero = new javax.swing.JButton();
         jDescMenuPrincipal = new javax.swing.JDesktopPane();
+        btnCerrarSesion = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnRegVehiculo = new javax.swing.JMenuItem();
@@ -51,15 +52,28 @@ public class GUIPaginaPrincipal extends javax.swing.JFrame {
         setTitle("Parqueaderos Popayán");
         setBackground(new java.awt.Color(255, 255, 255));
 
+        btnCerrarSesion.setText("Cerrar Sesion");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+
+        jDescMenuPrincipal.setLayer(btnCerrarSesion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDescMenuPrincipalLayout = new javax.swing.GroupLayout(jDescMenuPrincipal);
         jDescMenuPrincipal.setLayout(jDescMenuPrincipalLayout);
         jDescMenuPrincipalLayout.setHorizontalGroup(
             jDescMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 709, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDescMenuPrincipalLayout.createSequentialGroup()
+                .addGap(0, 636, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesion))
         );
         jDescMenuPrincipalLayout.setVerticalGroup(
             jDescMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDescMenuPrincipalLayout.createSequentialGroup()
+                .addGap(0, 425, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesion))
         );
 
         jMenu1.setText("Opciones");
@@ -103,7 +117,7 @@ public class GUIPaginaPrincipal extends javax.swing.JFrame {
             public void run(){
                 GUIRegistrarVehiculo reg = new GUIRegistrarVehiculo();
 
-                reg.setLocation(700,200);
+                //reg.setLocation(700,200);
 
                 Vehiculo vehi = new Vehiculo();
                 ConsultasVehiculo conVehi = new ConsultasVehiculo();
@@ -114,10 +128,23 @@ public class GUIPaginaPrincipal extends javax.swing.JFrame {
                 CtrlRegVehiculo ctrlRegVehiculo = new CtrlRegVehiculo(clsregVehiculo,conRegVehi,vehi,conVehi,fi,conFi,reg);
                 ctrlRegVehiculo.iniciar();
                 reg.setVisible(true);
+                reg.setLocationRelativeTo(null);
                 //new GUIPaginaPrincipal().setVisible(false);
             }
         });
     }//GEN-LAST:event_btnRegVehiculoActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run(){
+                GUIIniciarSesion ini = new GUIIniciarSesion();
+                ini.setVisible(true);
+                ini.setLocationRelativeTo(null);
+                dispose();
+            }
+        });
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +182,7 @@ public class GUIPaginaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnRegParqueadero;
     public javax.swing.JButton btnRegVehiParque;
     private javax.swing.JMenuItem btnRegVehiculo;

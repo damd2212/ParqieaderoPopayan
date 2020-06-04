@@ -110,7 +110,7 @@ public class GUIIniciarSesion extends javax.swing.JFrame {
                 public void run(){
                     GUIPaginaPrincipal ins = new GUIPaginaPrincipal();
                     ins.setVisible(true);
-                    ins.setLocation(700, 400);
+                    ins.setLocationRelativeTo(null);//setLocation(700, 400);
                 }
             });
             this.dispose();
