@@ -5,6 +5,8 @@
  */
 package co.unicauca.proyecto.parqueaderospop.vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author danny
@@ -17,6 +19,7 @@ public class GUIIniciarSesion extends javax.swing.JFrame {
     public GUIIniciarSesion() {
         initComponents();
         setLocationRelativeTo(null);
+        jtxtFUser.setText("Admin");
     }
 
     /**
@@ -105,7 +108,11 @@ public class GUIIniciarSesion extends javax.swing.JFrame {
 //llama a la vista GuiPrincipal ,si la contraseña es correcta
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
-        if(true){
+        String Usuario = "Admin";
+        String Contraseña = "admin";
+        
+        String Pass = new String(jtxtFPassword.getPassword());
+        if(jtxtFUser.getText().equals(Usuario) && Pass.equals(Contraseña)){
             java.awt.EventQueue.invokeLater(new Runnable(){
                 public void run(){
                     GUIPaginaPrincipal ins = new GUIPaginaPrincipal();
@@ -115,7 +122,7 @@ public class GUIIniciarSesion extends javax.swing.JFrame {
             });
             this.dispose();
         }else{
-            System.out.println("Contraseña Incorrecta");
+            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
