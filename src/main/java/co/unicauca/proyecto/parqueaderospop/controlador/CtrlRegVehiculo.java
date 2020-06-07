@@ -88,20 +88,18 @@ public class CtrlRegVehiculo implements ActionListener {
                 if (frmRegVehi.jtxtFCasillero.getText() == null) {
                     regVehi.setRegNumCasillero(Integer.parseInt(null));
                 }
-                
-                if (conVehi.buscar(vehi) == 0) {
-                    conVehi.registrar(vehi);
-                }
-                
                 if (conRegVehi.registrar(regVehi)){
+                    if (conVehi.buscar(vehi) == 0) {
+                    conVehi.registrar(vehi);
+                    }
                     JOptionPane.showMessageDialog(null, "Registro guardado");
                     limpiar();
                 }else{
                     JOptionPane.showMessageDialog(null, "Registro NO guardado ");
+                    actuFecha();
                 }   
             }          
         }
-
     }
     
     
@@ -113,13 +111,15 @@ public class CtrlRegVehiculo implements ActionListener {
         frmRegVehi.jtxtFPlaca.setText(null);
         frmRegVehi.jcmbTipoVehiculo.setSelectedItem("Carro");
         frmRegVehi.jcmbNumCascos.setSelectedItem("0");
-        
-        Date date =  new Date();
-        DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");  
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
-        frmRegVehi.jtxtFHoraFecha.setText(hourFormat.format(date)+"  "+dateFormat.format(date));
-       
+        actuFecha();
         frmRegVehi.jchbLlaves.setSelected(false);
         frmRegVehi.jtxtFCasillero.setText(null);
+    }
+    
+    public void actuFecha(){
+        Date date =  new Date();
+        DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");  
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");  
+        frmRegVehi.jtxtFHoraFecha.setText(dateFormat.format(date)+ " "+hourFormat.format(date));
     }
 }

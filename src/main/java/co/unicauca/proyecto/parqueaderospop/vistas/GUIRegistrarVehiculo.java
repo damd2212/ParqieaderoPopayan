@@ -261,8 +261,8 @@ public class GUIRegistrarVehiculo extends javax.swing.JFrame {
     private void jtxtFHoraFechaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtxtFHoraFechaAncestorAdded
         Date date =  new Date();
        DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");  
-       DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
-       jtxtFHoraFecha.setText(hourFormat.format(date)+"  "+dateFormat.format(date));
+       DateFormat dateFormat = new SimpleDateFormat("yyy/MM/dd");  
+       jtxtFHoraFecha.setText(dateFormat.format(date)+ " "+hourFormat.format(date));
     }//GEN-LAST:event_jtxtFHoraFechaAncestorAdded
 
     /**
